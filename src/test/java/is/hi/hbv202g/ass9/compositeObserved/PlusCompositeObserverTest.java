@@ -1,14 +1,15 @@
 package is.hi.hbv202g.ass9.compositeObserved;
 
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class PlusCompositeObserverTest {
 
 	private PlusComposite plusComposite;
 
-	@Before
+	@BeforeEach
 	public void createPlusComposite() {
 		plusComposite = new PlusComposite();
 	}
@@ -18,10 +19,10 @@ public class PlusCompositeObserverTest {
 		NumberLeaf number1 = new NumberLeaf(1);
 		plusComposite.add(number1);
 
-		plusComposite.update(); // This will cause stuff printed on the screen: this is not tested.
+		plusComposite.update(); // This will cause stuff printed on the screen: this screen output is not tested.
 
-		assertEquals("An observing plus composite with one number leaf should store in its lastObservedField the value 1 to which the observed " +
-				"leaf was set", 1, plusComposite.getLastObservedResult());
+		assertEquals(1, plusComposite.getLastObservedResult(), "An observing plus composite with one number leaf should store in its lastObservedField the value 1 to which the observed " +
+				"leaf was set");
 	}
 
 }

@@ -1,10 +1,14 @@
 package is.hi.hbv202g.ass9.composite;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
+import org.junit.platform.suite.api.SelectClasses;
+import org.junit.platform.suite.api.Suite;
 
-@RunWith(Suite.class)
-@SuiteClasses({ MixedCompositeTest.class, MultiplyCompositeTest.class, NumberLeafTest.class, PlusCompositeTest.class })
+@Suite
+@SelectClasses({
+        MixedCompositeTest.class,
+        MultiplyCompositeTest.class,
+        NumberLeafTest.class,
+        PlusCompositeTest.class
+})
 public class Alltests {
 }

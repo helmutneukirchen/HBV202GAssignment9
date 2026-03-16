@@ -1,7 +1,8 @@
 package is.hi.hbv202g.ass9.composite;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 public class MixedCompositeTest {
 
@@ -19,6 +20,6 @@ public class MixedCompositeTest {
 		multiplyComposite.add(number4);
 		multiplyComposite.add(plusComposite);
 
-		assertEquals("(1+2)*4 should return 12", 12, multiplyComposite.getResult());
+		assertEquals(12, multiplyComposite.getResult(), "(1+2)*4 should return 12");
 	}
 }

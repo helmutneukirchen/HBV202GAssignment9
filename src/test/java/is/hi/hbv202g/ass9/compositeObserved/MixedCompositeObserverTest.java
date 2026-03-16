@@ -1,7 +1,8 @@
 package is.hi.hbv202g.ass9.compositeObserved;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 public class MixedCompositeObserverTest {
 
@@ -25,7 +26,7 @@ public class MixedCompositeObserverTest {
 
 		number1.setValue(3); // This will cause stuff printed on the screen: this is not tested.
 	
-		assertEquals("Having an expression (1+2)*4 and the observed leave with value 1 is set to 3, i.e. (3+2)*4, " +
-				"the lastObserverdValue should return 20", 20, multiplyComposite.getLastObservedResult());
+		assertEquals(20, multiplyComposite.getLastObservedResult(), "Having an expression (1+2)*4 and the observed leave with value 1 is set to 3, i.e. (3+2)*4, " +
+				"the lastObserverdValue should return 20");
 	}
 }

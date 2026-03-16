@@ -1,21 +1,22 @@
 package is.hi.hbv202g.ass9.composite;
 
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class PlusCompositeTest {
 
     private PlusComposite plusComposite;
 
-    @Before
+    @BeforeEach
     public void createPlusComposite() {
         plusComposite = new PlusComposite();
     }
 
     @Test
     public void testEmptyPlusComposite() {
-        assertEquals("An empty plus composite should return 0", 0, plusComposite.getResult());
+        assertEquals(0, plusComposite.getResult(), "An empty plus composite should return 0");
     }
 
     @Test
@@ -24,8 +25,8 @@ public class PlusCompositeTest {
 
         plusComposite.add(number2);
 
-        assertEquals("A plus composite consisting only of one leaf with value 2 should return 2",
-                2, plusComposite.getResult());
+        assertEquals(2,
+                plusComposite.getResult(), "A plus composite consisting only of one leaf with value 2 should return 2");
     }
 
     @Test
@@ -36,8 +37,8 @@ public class PlusCompositeTest {
         plusComposite.add(number1);
         plusComposite.add(number2);
 
-        assertEquals("A plus composite consisting of leafs with values 1 and 2 should return 3",
-                3, plusComposite.getResult());
+        assertEquals(3,
+                plusComposite.getResult(), "A plus composite consisting of leafs with values 1 and 2 should return 3");
     }
 
     @Test
@@ -52,8 +53,8 @@ public class PlusCompositeTest {
         plusComposite2.add(plusComposite);
         plusComposite2.add(plusComposite);
 
-        assertEquals("A plus composite consisting two further plus composites, each consisting of leafs with values " +
-                "1 and 2 should return (1+2)+(1+2)=6", 6, plusComposite2.getResult());
+        assertEquals(6, plusComposite2.getResult(), "A plus composite consisting two further plus composites, each consisting of leafs with values " +
+                "1 and 2 should return (1+2)+(1+2)=6");
     }
 
 }

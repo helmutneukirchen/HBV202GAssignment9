@@ -1,14 +1,15 @@
 package is.hi.hbv202g.ass9.compositeObservedTemplateMethod;
 
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class MultiplyCompositeTest {
 
 	private MultiplyComposite multiplyComposite;
 
-	@Before
+	@BeforeEach
 	public void createMultiplyComposite() {
 		multiplyComposite = new MultiplyComposite();
 	}
@@ -19,8 +20,8 @@ public class MultiplyCompositeTest {
 		NumberLeaf number2 = new NumberLeaf(2);
 
 		multiplyComposite.add(number2);
-		assertEquals("A multiply composite consisting only of one leaf with value 2 should return 2",
-				2, multiplyComposite.getResult());
+		assertEquals(2,
+				multiplyComposite.getResult(), "A multiply composite consisting only of one leaf with value 2 should return 2");
 	}
 
 	@Test
@@ -31,8 +32,8 @@ public class MultiplyCompositeTest {
 
 		multiplyComposite.add(number2);
 		multiplyComposite.add(number4);
-		assertEquals("A multiply composite consisting of leafs with values 2 and 4 should return 8",
-				8, multiplyComposite.getResult());
+		assertEquals(8,
+				multiplyComposite.getResult(), "A multiply composite consisting of leafs with values 2 and 4 should return 8");
 	}
 
 	@Test
@@ -47,8 +48,8 @@ public class MultiplyCompositeTest {
 		MultiplyComposite multiplyComposite2 = new MultiplyComposite();
 		multiplyComposite2.add(multiplyComposite);
 		multiplyComposite2.add(multiplyComposite);
-		assertEquals("A multiply composite consisting two further multiply composites, each consisting of leafs with " +
-				"values 2 and 4 should return (2*4)*(2*4)=64", 64, multiplyComposite2.getResult());
+		assertEquals(64, multiplyComposite2.getResult(), "A multiply composite consisting two further multiply composites, each consisting of leafs with " +
+				"values 2 and 4 should return (2*4)*(2*4)=64");
 	}
 
 }

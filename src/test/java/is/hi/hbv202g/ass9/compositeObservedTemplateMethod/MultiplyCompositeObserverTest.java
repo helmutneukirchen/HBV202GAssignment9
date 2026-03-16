@@ -1,14 +1,15 @@
 package is.hi.hbv202g.ass9.compositeObservedTemplateMethod;
 
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class MultiplyCompositeObserverTest {
 
 	private MultiplyComposite multiplyComposite;
 
-	@Before
+	@BeforeEach
 	public void createMultiplyComposite() {
 		multiplyComposite = new MultiplyComposite();
 	}
@@ -21,7 +22,7 @@ public class MultiplyCompositeObserverTest {
 
 		multiplyComposite.update(); // This will cause stuff printed on the screen: this is not tested.
 
-		assertEquals("An observing multiply composite with one number leaf should store in its lastObservedField the value 2 to which the observed " +
-				"leaf was set", 2, multiplyComposite.getLastObservedResult());
+		assertEquals(2, multiplyComposite.getLastObservedResult(), "An observing multiply composite with one number leaf should store in its lastObservedField the value 2 to which the observed " +
+				"leaf was set");
 	}
 }

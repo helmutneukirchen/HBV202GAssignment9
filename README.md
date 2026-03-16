@@ -1,12 +1,13 @@
 # HBV202GAssignment9
 A project skeleton for implementing the *Composite* pattern and the *Observer* pattern 
-(and some sort of *Template Method* pattern) based on tests using JUnit4.
+(and some sort of *Template Method* pattern) based on tests using JUnit5.
 
 This project is a Maven project, i.e. it uses the standard Maven project structure that your IDE should understand 
-when you `git clone` it. The provided Maven POM includes the JUnit4 dependency.
+when you `git clone` it. 
 
-Both the implementation and the tests are in Java package `is.hi.hbv202g.ass9`,  
-but in the usual separate Maven `src` directories:
+The provided Maven POM sets the Java version to 21 and includes the JUnit5 dependency.
+
+Both the implementation and the tests are in Java package `is.hi.hbv202g.ass9`, but in the usual **separate** Maven `src` directories:
 
 - `src/main/java`:
   - `is.hi.hbv202g.ass9.composite`: Your implementation of the *Composite* pattern has to go there. 
